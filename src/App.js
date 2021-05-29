@@ -8,7 +8,7 @@ import './App.css';
 
 class App extends Component {
   constructor() {
-    super();
+    super()
     this.state = {
       monsters : [],   // initial state set to empty
       searchField : ''
@@ -26,8 +26,8 @@ class App extends Component {
   // handleChange(e) {    here we will need to bind this explicitely
   //   this.setState({ searchField: e.target.value})
   // }
-  handleChange = e => {
-    this.setState({ searchField: e.target.value})
+  handleChange = event => {
+    this.setState({ searchField: event.target.value})
   }
   render() {        // render is just only required to tell what is to be rendered onto the broweser screen
     const { monsters , searchField } = this.state
@@ -39,7 +39,7 @@ class App extends Component {
         <h1>MONSTERS ROLODEX</h1>
          <SearchBox 
           placeholder = "Search Monsters!!"
-          handleChange = { e => {this.setState({searchField: e.target.value})}}/>
+          handleChange = { this.handleChange }/>
         <CardList monsters = {filteredMonsters} />
       </div>
     )
